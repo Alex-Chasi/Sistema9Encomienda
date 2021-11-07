@@ -31,3 +31,10 @@ Route::put('/act/{id}','App\Http\Controllers\DestinoController@update'); //actua
 Route::delete('/origenes/{id}','App\Http\Controllers\DestinoController@destroy'); //eliminar un registro
 
 
+//DetalleEnvio
+Route::get('/listardetalle','App\Http\Controllers\DetalleController@index'); //mostrar todos los registros
+Route::post('/creardetalle','App\Http\Controllers\DetalleController@store'); //crear un registro
+Route::put('/deta/{id}','App\Http\Controllers\DetalleController@update'); //actualizar un registro
+Route::delete('/eliminardet/{id}','App\Http\Controllers\DetalleController@destroy'); //eliminar un registro
+
+
