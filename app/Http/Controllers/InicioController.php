@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Origen;
+use App\Models\Inicio;
 
 
-class OrigenController extends Controller
+class InicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class OrigenController extends Controller
      */
     public function index()
     {
-        $origen = Origen::all();
+        $origen = Inicio::all();
         return $origen;
-
     }
 
     /**
@@ -38,7 +37,16 @@ class OrigenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $origen = new Inicio();
+        $origen->nombre = $request->nombre;
+        $origen->apellido = $request->apellido;
+        $origen->cedula = $request->cedula;
+        $origen->email = $request->email;
+        $origen->celular = $request->celular;
+        $origen->fechaEnvio = $request->fechaEnvio;
+        $origen->direccion = $request->direccion;
+        $origen->save(); 
+
     }
 
     /**
@@ -72,7 +80,17 @@ class OrigenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $origen = Inicio::findOrFail($request->id);
+        $origen->nombre = $request->nombre;
+        $origen->apellido = $request->apellido;
+        $origen->cedula = $request->cedula;
+        $origen->email = $request->email;
+        $origen->celular = $request->celular;
+        $origen->fechaEnvio = $request->fechaEnvio;
+        $origen->direccion = $request->direccion;
+        $origen->save();
+        return $origen;
+
     }
 
     /**
@@ -81,8 +99,10 @@ class OrigenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $origen = Inicio::destroy($request->id);
+        return $origen;
+
     }
 }

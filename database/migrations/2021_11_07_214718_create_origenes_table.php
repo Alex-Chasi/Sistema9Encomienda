@@ -22,6 +22,7 @@ class CreateOrigenesTable extends Migration
             $table->string('celular');
             $table->date('fechaEnvio');
             $table->string('direccion');
+
             $table->timestamps();
         });
     }

@@ -19,10 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //origen
-Route::get('/ori','App\Http\Controllers\OrigenController@index'); //mostrar todos los registros
-Route::post('/origenes/crear','App\Http\Controllers\OrigenController@store'); //crear un registro
-Route::put('/origenes/{id}','App\Http\Controllers\OrigenController@update'); //actualizar un registro
-Route::delete('/origenes/{id}','App\Http\Controllers\OrigenController@destroy'); //eliminar un registro
+Route::get('/ori','App\Http\Controllers\InicioController@index'); //mostrar todos los registros
+Route::post('/origenes/crear','App\Http\Controllers\InicioController@store'); //crear un registro
+Route::put('/origenes/{id}','App\Http\Controllers\InicioController@update'); //actualizar un registro
+Route::delete('/elimi/{id}','App\Http\Controllers\InicioController@destroy'); //eliminar un registro
 
 //destino
 Route::get('/des','App\Http\Controllers\DestinoController@index'); //mostrar todos los registros
